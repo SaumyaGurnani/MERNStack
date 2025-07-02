@@ -16,7 +16,7 @@ const App=()=>{
   {
     heroName:"Superman",
     desc:"Man of Steel",
-    pic:"https://images.unsplash.com/photo-1702138129392-364adea0ad00?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3VwZXJtYW58ZW58MHx8MHx8fDA%3D"
+    pic:"https://i.pinimg.com/736x/53/bb/7c/53bb7c09e74b05c54150f73b606dbddf.jpg"
   }
   
 ]

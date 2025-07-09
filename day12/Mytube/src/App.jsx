@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar.jsx'
 import {useEffect} from 'react'
 import youtube from './api/youtube.js'
 import {useState} from 'react'
+import VoiceSearch from './components/VoiceSearch.jsx'
 const App=()=>{
   const [mainVideo,setMainVideo]=useState(null)
   const[list,setList]=useState([])
@@ -16,7 +17,7 @@ const App=()=>{
         params:{
           part:'snippet',
           maxResults:5,
-          key:"AIzaSyDXCSHWoXyCdP5JipPe563xS5JoQsxlwZU",
+          key:"AIzaSyAfpP9Kn7WbyE1-5tF8QkFmTJs2Vfz_r7Q",
           q:searchValue
         }}
       )
@@ -29,6 +30,7 @@ const App=()=>{
   },[searchValue])
   return <Container className="mt-4">
     {console.log("C")}
+    <VoiceSearch onVoiceSearch={setSearchValue} />
     <SearchBar onSearch={setSearchValue}/>
     
     <Row>

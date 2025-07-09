@@ -14,7 +14,7 @@ const MainVideo=({mainVideo})=>{
                 width={'100%'}
                 height={400}
                 />
-                <h5>{mainVideo.snippet.channelTitle}</h5>
+                <h5>{mainVideo.snippet.title}</h5>
                 <p>{mainVideo.snippet.description}</p>
                 
         </Container>

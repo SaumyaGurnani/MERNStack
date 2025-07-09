@@ -4,18 +4,21 @@ const VoiceSearch = ({ onVoiceSearch }) => {
   const [listening, setListening] = useState(false);
   const [spokenText, setSpokenText] = useState('');
   const handleVoice = () => {
-    const speakPrompt = new SpeechSynthesisUtterance("क्या देखना चाहेंगे?");
-    speakPrompt.lang = "hi-IN";
-    speechSynthesis.speak(speakPrompt);
+  const speakPrompt = new SpeechSynthesisUtterance("क्या देखना चाहेंगे?");
+  speakPrompt.lang = "hi-IN";
 
+  setSpokenText('');
+  setListening(false);
+
+  
+  speakPrompt.onend = () => {
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     recognition.lang = 'hi-IN';
-
-    setListening(true);
     recognition.start();
+    setListening(true); // 👂 show mic animation now
 
     recognition.onresult = (event) => {
-      let text = event.results[0][0].transcript;
+      const text = event.results[0][0].transcript;
       setSpokenText(text);
       onVoiceSearch(text);
       setListening(false);
@@ -30,6 +33,11 @@ const VoiceSearch = ({ onVoiceSearch }) => {
       setListening(false);
     };
   };
+
+ 
+  speechSynthesis.speak(speakPrompt);
+};
+
 
   return (
     <div

@@ -9,7 +9,7 @@ import VoiceSearch from './components/VoiceSearch.jsx'
 const App=()=>{
   const [mainVideo,setMainVideo]=useState(null)
   const[list,setList]=useState([])
-  const [searchValue,setSearchValue]=useState('reactNative')
+  const [searchValue,setSearchValue]=useState('morning bhajan')
   console.log("A")
   useEffect(()=>{
     async function getData(){

@@ -15,7 +15,7 @@ const VoiceSearch = ({ onVoiceSearch }) => {
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     recognition.lang = 'hi-IN';
     recognition.start();
-    setListening(true); // 👂 show mic animation now
+    setListening(true); // show mic animation now
 
     recognition.onresult = (event) => {
       const text = event.results[0][0].transcript;

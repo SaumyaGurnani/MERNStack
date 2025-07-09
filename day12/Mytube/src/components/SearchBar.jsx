@@ -1,12 +1,19 @@
 import {InputGroup, Form, Button} from 'react-bootstrap'
-const SearchBar=()=>{
-  return <InputGroup className="mb-3">
+import {useState} from 'react'
+const SearchBar=({onSearch})=>{
+ const[search,setSearch]=useState('')
+ return <InputGroup className="mb-3">
       
         <Form.Control
           placeholder="Search..."
+          value={search}
+          onChange={e=>setSearch(e.target.value)}
          
         />
-        <Button variant="danger">Search</Button>
+        <Button variant="danger" onClick={()=>{
+          onSearch(search)
+          setSearch('')
+          }}>Search</Button>
       </InputGroup>
       
    

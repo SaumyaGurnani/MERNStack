@@ -1,7 +1,7 @@
 import {Container,Col, Row,Image} from 'react-bootstrap'
-const ListItem=({videoDetail})=>{
+const ListItem=({videoDetail,setMainVideo})=>{
     console.log(videoDetail)
-return <Container className="mb-3">
+return <Container className="mb-3" onClick={()=>setMainVideo(videoDetail)}>
     <Row>
         <Col sm={6}>
         <Image src={videoDetail.snippet.thumbnails.medium.url}

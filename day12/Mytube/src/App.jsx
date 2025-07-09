@@ -8,6 +8,7 @@ import {useState} from 'react'
 const App=()=>{
   const [mainVideo,setMainVideo]=useState(null)
   const[list,setList]=useState([])
+  const [searchValue,setSearchValue]=useState('reactNative')
   console.log("A")
   useEffect(()=>{
     async function getData(){
@@ -16,7 +17,7 @@ const App=()=>{
           part:'snippet',
           maxResults:5,
           key:"AIzaSyDXCSHWoXyCdP5JipPe563xS5JoQsxlwZU",
-          q:"srk"
+          q:searchValue
         }}
       )
       console.log(response.data,"==>response")
@@ -25,17 +26,17 @@ const App=()=>{
     }
     getData()
 
-  },[])
+  },[searchValue])
   return <Container className="mt-4">
     {console.log("C")}
-    <SearchBar/>
+    <SearchBar onSearch={setSearchValue}/>
     
     <Row>
       <Col sm={8} >
       <MainVideo mainVideo={mainVideo}/>
       </Col>
       <Col sm={4}>
-      <List list={list}/>
+      <List list={list} setMainVideo={setMainVideo}/>
       </Col>
     </Row>
   </Container>

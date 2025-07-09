@@ -18,7 +18,10 @@ const App=()=>{
           part:'snippet',
           maxResults:5,
           key:"AIzaSyAfpP9Kn7WbyE1-5tF8QkFmTJs2Vfz_r7Q",
-          q:searchValue
+          q:searchValue,
+          type: 'video',
+          videoEmbeddable: 'true', // ✅ only embeddable videos
+          safeSearch: 'moderate', 
         }}
       )
       console.log(response.data,"==>response")

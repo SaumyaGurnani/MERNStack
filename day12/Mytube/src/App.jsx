@@ -17,7 +17,7 @@ const App=()=>{
         params:{
           part:'snippet',
           maxResults:5,
-          key:import.meta.env.VITE_API_KEY,
+          key:"AIzaSyDHsdtbLO8lpDcxEjcYHsHP47I00ZRg1y8",
           q:searchValue,
           
         }}

@@ -17,7 +17,7 @@ const App=()=>{
         params:{
           part:'snippet',
           maxResults:5,
-          key:"AIzaSyAahVnBxNEHTfzHVj6i7NEg6kbwNBUQig4",
+          key:API_KEY,
           q:searchValue,
           
         }}

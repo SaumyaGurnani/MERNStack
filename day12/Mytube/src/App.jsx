@@ -17,7 +17,7 @@ const App=()=>{
         params:{
           part:'snippet',
           maxResults:5,
-          key:API_KEY,
+          key:process.env.REACT_APP_API_KEY,
           q:searchValue,
           
         }}
